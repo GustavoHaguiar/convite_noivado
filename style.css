@@ -97,7 +97,7 @@ body {
 /* Ajustes para telas pequenas (celulares) */
 @media (max-width: 767px) {
     .convite-container {
-        width: 200%; /* 90% da largura da tela */
-        height: 100%; /* Mantém a proporção (130% da largura) */
+        width: 85vw; /* 90% da largura da tela */
+        height: 130vh; /* Mantém a proporção (130% da largura) */
     }
 }
