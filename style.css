@@ -86,18 +86,4 @@ body {
     opacity: 0;
 }
 
-/* Ajustes para telas grandes */
-@media (min-width: 768px) {
-    .convite-container {
-        width: 200%; /* Largura padrão para desktop */
-        height: 100%; /* Altura padrão para desktop */
-    }
-}
 
-/* Ajustes para telas pequenas (celulares) */
-@media (max-width: 767px) {
-    .convite-container {
-        width: 85vw; /* 90% da largura da tela */
-        height: 130vh; /* Mantém a proporção (130% da largura) */
-    }
-}
