@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #212529;
+    overflow: hidden;
+    color: white;
+    font-family: sans-serif;
+}
+
+.convite-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    max-height: 100vh;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.convite-interior {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.convite-interior img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.capa-esquerda,
+.capa-direita {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 1s ease-in-out, opacity 0.5s 1s;
+    z-index: 10;
+}
+
+.capa-esquerda {
+    left: 0;
+    transform-origin: left;
+}
+
+.capa-direita {
+    right: 0;
+    transform-origin: right;
+}
+
+.capa-esquerda img,
+.capa-direita img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* A imagem preenche o espaço */
+    display: block;
+}
+
+/* Animação de abertura e desaparecimento */
+.convite-container.aberto .convite-interior {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.convite-container.aberto .capa-esquerda {
+    transform: translateX(-100%) rotateY(-20deg);
+    opacity: 0;
+}
+
+.convite-container.aberto .capa-direita {
+    transform: translateX(100%) rotateY(20deg);
+    opacity: 0;
+}
+
+/* Ajustes para telas grandes */
+@media (min-width: 768px) {
+    .convite-container {
+        width: 200%; /* Largura padrão para desktop */
+        height: 100%; /* Altura padrão para desktop */
+    }
+}
+
+/* Ajustes para telas pequenas (celulares) */
+@media (max-width: 767px) {
+    .convite-container {
+        width: 90vw; /* 90% da largura da tela */
+        height: 130vw; /* Mantém a proporção (130% da largura) */
+    }
+}
